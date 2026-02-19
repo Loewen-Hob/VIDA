@@ -1,0 +1,15 @@
+Evaluation Report for: Meta-Llama-3-8B_output-text
+Date: 2026-01-05 15:39:30
+========================================
+
+Loading Eval Model: /home/users/zhanghongbo/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: Meta-Llama-3-8B_output-text
+========================================
+1. K-RME (Accuracy):    49.02%
+2. SAS (Strategy):      31.37%
+3. Max-Sim (Semantic):  0.4486
+4. Visual Grounding:    0.4082
+========================================

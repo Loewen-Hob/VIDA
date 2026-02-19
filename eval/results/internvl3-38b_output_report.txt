@@ -1,0 +1,15 @@
+Evaluation Report for: internvl3-38b_output
+Date: 2026-01-03 01:03:52
+========================================
+
+Loading Eval Model: /root/paddlejob/workspace/env_run/output/VIDA/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: internvl3-38b_output
+========================================
+1. K-RME (Accuracy):    40.20%
+2. SAS (Strategy):      21.57%
+3. Max-Sim (Semantic):  0.4623
+4. Visual Grounding:    0.4349
+========================================

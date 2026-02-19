@@ -1,0 +1,15 @@
+Evaluation Report for: llava-1.5-7b
+Date: 2026-01-05 15:54:07
+========================================
+
+Loading Eval Model: /home/users/zhanghongbo/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: llava-1.5-7b
+========================================
+1. K-RME (Accuracy):    30.39%
+2. SAS (Strategy):      20.59%
+3. Max-Sim (Semantic):  0.4534
+4. Visual Grounding:    0.4173
+========================================

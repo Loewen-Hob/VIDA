@@ -1,0 +1,15 @@
+Evaluation Report for: base_output
+Date: 2026-01-02 17:11:45
+========================================
+
+Loading Eval Model: /root/paddlejob/workspace/env_run/output/VIDA/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: Qwen3vl8b_output
+========================================
+1. K-RME (Accuracy):    59.80%
+2. SAS (Strategy):      28.43%
+3. Max-Sim (Semantic):  0.4598
+4. Visual Grounding:    0.4406
+========================================

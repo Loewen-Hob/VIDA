@@ -1,0 +1,15 @@
+Evaluation Report for: deepseek-v3_output
+Date: 2026-01-03 01:04:18
+========================================
+
+Loading Eval Model: /root/paddlejob/workspace/env_run/output/VIDA/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: deepseek-v3_output
+========================================
+1. K-RME (Accuracy):    73.53%
+2. SAS (Strategy):      42.16%
+3. Max-Sim (Semantic):  0.4741
+4. Visual Grounding:    0.4572
+========================================

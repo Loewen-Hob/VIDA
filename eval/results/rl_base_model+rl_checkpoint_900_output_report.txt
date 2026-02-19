@@ -1,0 +1,15 @@
+Evaluation Report for: rl_base_model+rl_checkpoint_900_output
+Date: 2026-01-02 23:45:07
+========================================
+
+Loading Eval Model: /root/paddlejob/workspace/env_run/output/VIDA/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: rl_base_model+rl_checkpoint_900_output
+========================================
+1. K-RME (Accuracy):    82.35%
+2. SAS (Strategy):      49.02%
+3. Max-Sim (Semantic):  0.4641
+4. Visual Grounding:    0.5035
+========================================

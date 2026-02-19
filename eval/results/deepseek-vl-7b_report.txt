@@ -1,0 +1,15 @@
+Evaluation Report for: deepseek-vl-7b
+Date: 2026-01-05 17:48:34
+========================================
+
+Loading Eval Model: /home/users/zhanghongbo/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: deepseek-vl-7b
+========================================
+1. K-RME (Accuracy):    50.98%
+2. SAS (Strategy):      31.37%
+3. Max-Sim (Semantic):  0.4666
+4. Visual Grounding:    0.4775
+========================================

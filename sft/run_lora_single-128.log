@@ -1,0 +1,675 @@
+nohup: ignoring input
+run sh: `/usr/bin/python3.10 /usr/local/lib/python3.10/dist-packages/swift/cli/sft.py --model /root/paddlejob/workspace/env_run/output/VIDA/Qwen3-VL-8B-Instruct --dataset ../datasets/MS-S-train_sft.jsonl --output_dir output/qwen3_vl_8b_lora_sft_stable --train_type lora --lora_rank 64 --lora_alpha 128 --lora_dropout 0.05 --target_modules all-linear --freeze_vit true --torch_dtype bfloat16 --num_train_epochs 3 --learning_rate 1e-4 --warmup_ratio 0.03 --per_device_train_batch_size 8 --gradient_accumulation_steps 8 --max_length 2048 --max_pixels 1003520 --gradient_checkpointing true --save_steps 50 --eval_steps 50 --save_only_model true --save_total_limit 3 --logging_steps 5 --lazy_tokenize true --dataloader_num_workers 1`
+[INFO:swift] Successfully registered `/usr/local/lib/python3.10/dist-packages/swift/llm/dataset/data/dataset_info.json`.
+[INFO:swift] rank: -1, local_rank: -1, world_size: 1, local_world_size: 1
+`torch_dtype` is deprecated! Use `dtype` instead!
+[INFO:swift] output_dir: /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420
+[INFO:swift] Global seed set to 42
+[INFO:swift] args: TrainArguments(
+_n_gpu=-1,
+acc_strategy=token,
+accelerator_config={'dispatch_batches': False},
+adafactor=False,
+adalora_beta1=0.85,
+adalora_beta2=0.85,
+adalora_deltaT=1,
+adalora_init_r=12,
+adalora_orth_reg_weight=0.5,
+adalora_target_r=8,
+adalora_tfinal=0,
+adalora_tinit=0,
+adam_beta1=0.9,
+adam_beta2=0.95,
+adam_epsilon=1e-08,
+adapter_act=gelu,
+adapter_length=128,
+adapters=[],
+add_version=True,
+agent_template=None,
+aligner_lr=None,
+attn_impl=None,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=True,
+bf16_full_eval=False,
+bnb_4bit_compute_dtype=torch.bfloat16,
+bnb_4bit_quant_storage=None,
+bnb_4bit_quant_type=nf4,
+bnb_4bit_use_double_quant=True,
+boft_block_num=0,
+boft_block_size=4,
+boft_dropout=0.0,
+boft_n_butterfly_factor=1,
+cached_dataset=[],
+cached_val_dataset=[],
+check_model=True,
+ckpt_dir=None,
+columns={},
+create_checkpoint_symlink=False,
+custom_dataset_info=[],
+custom_register_path=[],
+data_seed=42,
+dataloader_drop_last=False,
+dataloader_num_workers=1,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+dataset=['../datasets/MS-S-train_sft.jsonl'],
+dataset_num_proc=1,
+dataset_shuffle=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=18000000,
+debug=None,
+deepspeed=None,
+deepspeed_autotp_size=None,
+device_groups=None,
+device_map=None,
+disable_tqdm=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+download_mode=reuse_dataset_if_exists,
+ds3_gather_for_generation=True,
+early_stop_interval=None,
+enable_channel_loss=False,
+enable_dft_loss=False,
+eval_accumulation_steps=None,
+eval_dataset=[],
+eval_dataset_args=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_generation_config=None,
+eval_limit=None,
+eval_on_start=False,
+eval_steps=50.0,
+eval_strategy=no,
+eval_use_evalscope=False,
+eval_use_gather_object=False,
+external_plugins=[],
+extra_eval_args=None,
+fourier_n_frequency=2000,
+fourier_scaling=300.0,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+freeze_aligner=True,
+freeze_llm=False,
+freeze_parameters=[],
+freeze_parameters_ratio=0.0,
+freeze_parameters_regex=None,
+freeze_vit=True,
+fsdp=None,
+fsdp_config=None,
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+galore_cos_threshold=0.4,
+galore_gamma_proj=2,
+galore_optim_per_parameter=False,
+galore_proj_bits=4,
+galore_proj_group_size=256,
+galore_proj_quant=False,
+galore_proj_type=std,
+galore_quantization=False,
+galore_queue_size=5,
+galore_rank=128,
+galore_scale=1.0,
+galore_target_modules=None,
+galore_update_proj_gap=50,
+galore_with_embedding=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=8,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=False,
+half_precision_backend=auto,
+hqq_axis=None,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_args_error=False,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+init_strategy=None,
+init_weights=True,
+interleave_prob=None,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+lazy_tokenize=True,
+learning_rate=0.0001,
+length_column_name=length,
+liger_kernel_config=None,
+lisa_activated_layers=0,
+lisa_step_interval=20,
+llamapro_num_groups=None,
+llamapro_num_new_blocks=4,
+load_args=False,
+load_best_model_at_end=False,
+load_data_args=False,
+load_from_cache_file=False,
+local_rank=-1,
+local_repo_path=None,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/runs,
+logging_first_step=True,
+logging_nan_inf_filter=True,
+logging_steps=5,
+logging_strategy=steps,
+logprobs=False,
+lora_alpha=128,
+lora_bias=none,
+lora_dropout=0.05,
+lora_dtype=None,
+lora_ga_batch_size=2,
+lora_ga_direction=ArB2r,
+lora_ga_iters=2,
+lora_ga_max_length=1024,
+lora_ga_scale=stable,
+lora_ga_stable_gamma=16,
+lora_modules=[],
+lora_rank=64,
+lorap_lr_ratio=None,
+loss_scale=default,
+loss_type=None,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=cosine,
+max_epochs=None,
+max_grad_norm=1.0,
+max_length=2048,
+max_memory={},
+max_model_len=None,
+max_new_tokens=64,
+max_pixels=1003520,
+max_steps=-1,
+metric=None,
+metric_for_best_model=loss,
+model=/root/paddlejob/workspace/env_run/output/VIDA/Qwen3-VL-8B-Instruct,
+model_author=None,
+model_kwargs={},
+model_name=None,
+model_revision=None,
+model_type=qwen3_vl,
+modules_to_save=[],
+mp_parameters=,
+neftune_noise_alpha=None,
+new_special_tokens=[],
+no_cuda=False,
+norm_bbox=None,
+num_beams=1,
+num_labels=None,
+num_train_epochs=3.0,
+optim=adamw_torch_fused,
+optim_args=None,
+optim_target_modules=None,
+optimizer=None,
+output_dir=/root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420,
+overwrite_output_dir=False,
+packing=False,
+packing_length=None,
+packing_num_proc=1,
+padding_free=False,
+padding_side=right,
+parallelism_config=None,
+past_index=-1,
+per_device_eval_batch_size=1,
+per_device_train_batch_size=8,
+predict_with_generate=False,
+prediction_loss_only=False,
+problem_type=None,
+project=huggingface,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+quant_bits=None,
+quant_method=None,
+ray_exp_name=None,
+ray_scope=last,
+reft_args=None,
+reft_intervention_type=LoreftIntervention,
+reft_layer_key=None,
+reft_layers=None,
+reft_rank=4,
+remove_unused_columns=True,
+repetition_penalty=None,
+report_to=['tensorboard'],
+response_prefix=None,
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+resume_only_model=False,
+rope_scaling=None,
+router_aux_loss_coef=0.0,
+run_name=/root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420,
+save_on_each_node=False,
+save_only_model=True,
+save_safetensors=True,
+save_steps=50.0,
+save_strategy=steps,
+save_total_limit=3,
+seed=42,
+sequence_parallel_size=1,
+shuffle_buffer_size=1000,
+skip_memory_metrics=True,
+sortish_sampler=False,
+split_dataset_ratio=0.0,
+stop_words=[],
+stopping_strategy=first_exhausted,
+stream=False,
+streaming=False,
+strict=False,
+swanlab_exp_name=None,
+swanlab_lark_secret=None,
+swanlab_lark_webhook_url=None,
+swanlab_mode=cloud,
+swanlab_project=None,
+swanlab_token=<SWANLAB_TOKEN>,
+swanlab_workspace=None,
+system=None,
+target_modules=['all-linear'],
+target_parameters=None,
+target_regex=None,
+task_type=causal_lm,
+temperature=0.0,
+template=qwen3_vl,
+template_backend=swift,
+tf32=None,
+top_k=None,
+top_logprobs=None,
+top_p=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_dtype=torch.bfloat16,
+torch_empty_cache_steps=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+trackio_space_id=trackio,
+train_dataloader_shuffle=True,
+train_type=lora,
+trainable_parameters=[],
+trainable_parameters_regex=None,
+truncation_strategy=delete,
+tuner_backend=peft,
+use_chat_template=True,
+use_cpu=False,
+use_dora=False,
+use_flash_ckpt=False,
+use_galore=False,
+use_hf=False,
+use_legacy_prediction_loop=False,
+use_liger_kernel=False,
+use_logits_to_keep=None,
+use_mps_device=False,
+use_ray=False,
+use_rslora=False,
+use_swift_lora=False,
+val_dataset=[],
+val_dataset_shuffle=False,
+vera_d_initial=0.1,
+vera_dropout=0.0,
+vera_projection_prng_key=0,
+vera_rank=256,
+vit_gradient_checkpointing=None,
+vit_lr=None,
+warmup_ratio=0.03,
+warmup_steps=0,
+weight_decay=0.1,
+zero_hpz_partition_size=None,
+)
+[INFO:swift] model_kwargs: {'device_map': 'cuda:0', 'dtype': torch.bfloat16}
+Loading checkpoint shards:   0%|                                                            | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|█████████████                                       | 1/4 [00:01<00:05,  1.86s/it]Loading checkpoint shards:  50%|██████████████████████████                          | 2/4 [00:03<00:03,  1.89s/it]Loading checkpoint shards:  75%|███████████████████████████████████████             | 3/4 [00:05<00:01,  1.90s/it]Loading checkpoint shards: 100%|████████████████████████████████████████████████████| 4/4 [00:06<00:00,  1.60s/it]Loading checkpoint shards: 100%|████████████████████████████████████████████████████| 4/4 [00:06<00:00,  1.71s/it]
+[INFO:swift] Setting max_ratio: 200. You can adjust this hyperparameter through the environment variable: `MAX_RATIO`.
+[INFO:swift] Setting frame_factor: 2. You can adjust this hyperparameter through the environment variable: `FRAME_FACTOR`.
+[INFO:swift] Setting fps: 2.0. You can adjust this hyperparameter through the environment variable: `FPS`.
+[INFO:swift] Setting fps_min_frames: 4. You can adjust this hyperparameter through the environment variable: `FPS_MIN_FRAMES`.
+[INFO:swift] Setting fps_max_frames: 768. You can adjust this hyperparameter through the environment variable: `FPS_MAX_FRAMES`.
+[INFO:swift] Setting image_max_token_num: 16384. You can adjust this hyperparameter through the environment variable: `IMAGE_MAX_TOKEN_NUM`.
+[INFO:swift] Setting image_min_token_num: 4. You can adjust this hyperparameter through the environment variable: `IMAGE_MIN_TOKEN_NUM`.
+[INFO:swift] Setting spatial_merge_size: 2. You can adjust this hyperparameter through the environment variable: `SPATIAL_MERGE_SIZE`.
+[INFO:swift] Setting video_max_token_num: 768. You can adjust this hyperparameter through the environment variable: `VIDEO_MAX_TOKEN_NUM`.
+[INFO:swift] Setting video_min_token_num: 128. You can adjust this hyperparameter through the environment variable: `VIDEO_MIN_TOKEN_NUM`.
+[INFO:swift] model.hf_device_map: {'': device(type='cuda', index=0)}
+[INFO:swift] model_info: ModelInfo(model_type='qwen3_vl', model_dir='/root/paddlejob/workspace/env_run/output/VIDA/Qwen3-VL-8B-Instruct', torch_dtype=torch.bfloat16, max_model_len=262144, quant_method=None, quant_bits=None, rope_scaling={'mrope_interleaved': True, 'mrope_section': [24, 20, 20], 'rope_type': 'default'}, is_moe_model=False, is_multimodal=True, config=Qwen3VLConfig {
+  "architectures": [
+    "Qwen3VLForConditionalGeneration"
+  ],
+  "dtype": "bfloat16",
+  "hidden_size": 4096,
+  "image_token_id": 151655,
+  "model_type": "qwen3_vl",
+  "pad_token_id": 151643,
+  "text_config": {
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "bos_token_id": 151643,
+    "dtype": "bfloat16",
+    "eos_token_id": 151645,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 4096,
+    "initializer_range": 0.02,
+    "intermediate_size": 12288,
+    "max_position_embeddings": 262144,
+    "model_type": "qwen3_vl_text",
+    "num_attention_heads": 32,
+    "num_hidden_layers": 36,
+    "num_key_value_heads": 8,
+    "pad_token_id": 151643,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": {
+      "mrope_interleaved": true,
+      "mrope_section": [
+        24,
+        20,
+        20
+      ],
+      "rope_type": "default"
+    },
+    "rope_theta": 5000000,
+    "use_cache": true,
+    "vocab_size": 151936
+  },
+  "tie_word_embeddings": false,
+  "transformers_version": "4.57.3",
+  "video_token_id": 151656,
+  "vision_config": {
+    "deepstack_visual_indexes": [
+      8,
+      16,
+      24
+    ],
+    "depth": 27,
+    "dtype": "bfloat16",
+    "hidden_act": "gelu_pytorch_tanh",
+    "hidden_size": 1152,
+    "in_channels": 3,
+    "initializer_range": 0.02,
+    "intermediate_size": 4304,
+    "model_type": "qwen3_vl",
+    "num_heads": 16,
+    "num_position_embeddings": 2304,
+    "out_hidden_size": 4096,
+    "pad_token_id": 151643,
+    "patch_size": 16,
+    "spatial_merge_size": 2,
+    "temporal_patch_size": 2
+  },
+  "vision_end_token_id": 151653,
+  "vision_start_token_id": 151652
+}
+, task_type='causal_lm', num_labels=None)
+[INFO:swift] model.generation_config: GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "max_new_tokens": 64,
+  "pad_token_id": 151643
+}
+
+[INFO:swift] default_system: None
+[INFO:swift] max_length: 2048
+[INFO:swift] response_prefix: ''
+[INFO:swift] agent_template: hermes
+[INFO:swift] norm_bbox: norm1000
+[INFO:swift] Setting ROOT_IMAGE_DIR: None. You can adjust this hyperparameter through the environment variable: `ROOT_IMAGE_DIR`.
+[INFO:swift] Setting QWENVL_BBOX_FORMAT: legacy. You can adjust this hyperparameter through the environment variable: `QWENVL_BBOX_FORMAT`.
+[INFO:swift] Start time of running main: 2025-12-28 10:24:28.107003
+[INFO:swift] swift.__version__: 3.11.2
+Map:   0%|                                                                        | 0/3042 [00:00<?, ? examples/s]Map:  33%|███████████████████▍                                       | 1000/3042 [00:00<00:00, 3611.56 examples/s]Map: 100%|███████████████████████████████████████████████████████████| 3042/3042 [00:00<00:00, 9777.55 examples/s]
+[INFO:swift] train_dataset: Dataset({
+    features: ['images', 'messages'],
+    num_rows: 3042
+})
+[INFO:swift] val_dataset: None
+[INFO:swift] [INPUT_IDS] [151644, 8948, 198, 2610, 525, 264, 6584, 14791, 14692, 13, 64547, 279, 1196, 594, 17995, 3880, 3118, 389, 279, 2168, 323, 1681, 13, 151645, 198, 151644, 872, 198, 151652, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151653, 4340, 311, 2297, 432, 11, 432, 594, 49431, 323, 4287, 11, 42903, 1128, 3093, 315, 20704, 18824, 311, 14678, 13, 151645, 198, 151644, 77091, 198, 6713, 7703, 264, 10799, 1965, 22549, 6005, 1388, 35592, 14, 7119, 65926, 14, 484, 10692, 10779, 65659, 6862, 287, 30418, 279, 3550, 16566, 30, 151645, 198]
+[INFO:swift] [INPUT] <|im_start|>system
+You are a professional interior designer. Identify the user's implicit needs based on the image and request.<|im_end|>
+<|im_start|>user
+<|vision_start|>[151655 * 961]<|vision_end|>How to change it, it's bland and empty, unsure what kind of hanging painting to hang.<|im_end|>
+<|im_start|>assistant
+Can increasing a coffee table/decorative paintings/throw pillows/indoor plants/carpeting enrich the space atmosphere?<|im_end|>
+
+[INFO:swift] [LABELS_IDS] [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 6713, 7703, 264, 10799, 1965, 22549, 6005, 1388, 35592, 14, 7119, 65926, 14, 484, 10692, 10779, 65659, 6862, 287, 30418, 279, 3550, 16566, 30, 151645, 198]
+[INFO:swift] [LABELS] [-100 * 1016]Can increasing a coffee table/decorative paintings/throw pillows/indoor plants/carpeting enrich the space atmosphere?<|im_end|>
+
+[INFO:swift] The TrainArguments will be saved in: /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/args.json
+[INFO:swift] lora_config: LoraConfig(task_type='CAUSAL_LM', peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, peft_version='0.18.0', base_model_name_or_path='/root/paddlejob/workspace/env_run/output/VIDA/Qwen3-VL-8B-Instruct', revision=None, inference_mode=False, r=64, target_modules='^(model.language_model.*\\.(o_proj|down_proj|k_proj|q_proj|gate_proj|up_proj|v_proj))$', exclude_modules=None, lora_alpha=128, lora_dropout=0.05, fan_in_fan_out=False, bias='none', use_rslora=False, modules_to_save=[], init_lora_weights=True, layers_to_transform=None, layers_pattern=None, rank_pattern={}, alpha_pattern={}, megatron_config=None, megatron_core='megatron.core', trainable_token_indices=None, loftq_config={}, eva_config=None, corda_config=None, use_dora=False, alora_invocation_tokens=None, use_qalora=False, qalora_group_size=16, layer_replication=None, runtime_config=LoraRuntimeConfig(ephemeral_gpu_offload=False), lora_bias=False, target_parameters=None, arrow_config=None, ensure_weight_tying=False, lora_dtype=None, lorap_lr_ratio=None, lorap_emb_lr=1e-06)
+[INFO:swift] model: PeftModelForCausalLM(
+  (base_model): LoraModel(
+    (model): Qwen3VLForConditionalGeneration(
+      (model): Qwen3VLModel(
+        (visual): Qwen3VLVisionModel(
+          (patch_embed): Qwen3VLVisionPatchEmbed(
+            (proj): Conv3d(3, 1152, kernel_size=(2, 16, 16), stride=(2, 16, 16))
+          )
+          (pos_embed): Embedding(2304, 1152)
+          (rotary_pos_emb): Qwen3VLVisionRotaryEmbedding()
+          (blocks): ModuleList(
+            (0-26): 27 x Qwen3VLVisionBlock(
+              (norm1): LayerNorm((1152,), eps=1e-06, elementwise_affine=True)
+              (norm2): LayerNorm((1152,), eps=1e-06, elementwise_affine=True)
+              (attn): Qwen3VLVisionAttention(
+                (qkv): Linear(in_features=1152, out_features=3456, bias=True)
+                (proj): Linear(in_features=1152, out_features=1152, bias=True)
+              )
+              (mlp): Qwen3VLVisionMLP(
+                (linear_fc1): Linear(in_features=1152, out_features=4304, bias=True)
+                (linear_fc2): Linear(in_features=4304, out_features=1152, bias=True)
+                (act_fn): GELUTanh()
+              )
+            )
+          )
+          (merger): Qwen3VLVisionPatchMerger(
+            (norm): LayerNorm((1152,), eps=1e-06, elementwise_affine=True)
+            (linear_fc1): Linear(in_features=4608, out_features=4608, bias=True)
+            (act_fn): GELU(approximate='none')
+            (linear_fc2): Linear(in_features=4608, out_features=4096, bias=True)
+          )
+          (deepstack_merger_list): ModuleList(
+            (0-2): 3 x Qwen3VLVisionPatchMerger(
+              (norm): LayerNorm((4608,), eps=1e-06, elementwise_affine=True)
+              (linear_fc1): Linear(in_features=4608, out_features=4608, bias=True)
+              (act_fn): GELU(approximate='none')
+              (linear_fc2): Linear(in_features=4608, out_features=4096, bias=True)
+            )
+          )
+        )
+        (language_model): Qwen3VLTextModel(
+          (embed_tokens): Embedding(151936, 4096)
+          (layers): ModuleList(
+            (0-35): 36 x Qwen3VLTextDecoderLayer(
+              (self_attn): Qwen3VLTextAttention(
+                (q_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=4096, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=4096, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (k_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=1024, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=1024, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (v_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=1024, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=1024, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (o_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=4096, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=4096, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (q_norm): Qwen3VLTextRMSNorm((128,), eps=1e-06)
+                (k_norm): Qwen3VLTextRMSNorm((128,), eps=1e-06)
+              )
+              (mlp): Qwen3VLTextMLP(
+                (gate_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=12288, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=12288, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (up_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=12288, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=12288, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (down_proj): lora.Linear(
+                  (base_layer): Linear(in_features=12288, out_features=4096, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=12288, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=4096, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (act_fn): SiLUActivation()
+              )
+              (input_layernorm): Qwen3VLTextRMSNorm((4096,), eps=1e-06)
+              (post_attention_layernorm): Qwen3VLTextRMSNorm((4096,), eps=1e-06)
+            )
+          )
+          (norm): Qwen3VLTextRMSNorm((4096,), eps=1e-06)
+          (rotary_emb): Qwen3VLTextRotaryEmbedding()
+        )
+      )
+      (lm_head): Linear(in_features=4096, out_features=151936, bias=False)
+    )
+  )
+)
+[INFO:swift] model_parameter_info: PeftModelForCausalLM: 8941.7116M Params (174.5879M Trainable [1.9525%]), 0.0001M Buffers.
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+/usr/local/lib/python3.10/dist-packages/setuptools-68.2.2-py3.10.egg/_distutils_hack/__init__.py:18: UserWarning: Distutils was imported before Setuptools, but importing Setuptools also replaces the `distutils` module in `sys.modules`. This may lead to undesirable behaviors or errors. To avoid these issues, avoid using distutils directly, ensure that setuptools is installed in the traditional way (e.g. not an editable install), and/or make sure that setuptools is always imported before distutils.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/setuptools-68.2.2-py3.10.egg/_distutils_hack/__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn("Setuptools is replacing distutils.")
+[INFO:swift] use_reentrant: True
+[INFO:swift] The logging file will be saved in: /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/logging.jsonl
+[INFO:swift] Successfully registered post_encode hook: ['PeftModelForCausalLM'].
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 151645, 'bos_token_id': None}.
+Train:   0%|                                                                              | 0/144 [00:00<?, ?it/s][INFO:swift] use_logits_to_keep: False
+Train:   1%|▍                                                                   | 1/144 [00:54<2:09:51, 54.49s/it]                                                                                                                  Train:   1%|▍                                                                   | 1/144 [00:54<2:09:51, 54.49s/it]Train:   1%|▍                                                                   | 1/144 [00:54<2:09:51, 54.49s/it]Train:   1%|▉                                                                   | 2/144 [01:37<1:52:30, 47.54s/it]Train:   2%|█▍                                                                  | 3/144 [02:18<1:45:23, 44.85s/it]Train:   3%|█▉                                                                  | 4/144 [03:00<1:41:47, 43.62s/it]Train:   3%|██▎                                                                 | 5/144 [03:42<1:39:28, 42.94s/it]                                                                                                                  Train:   3%|██▎                                                                 | 5/144 [03:42<1:39:28, 42.94s/it]Train:   3%|██▎                                                                 | 5/144 [03:42<1:39:28, 42.94s/it]Train:   4%|██▊                                                                 | 6/144 [04:23<1:37:43, 42.49s/it]Train:   5%|███▎                                                                | 7/144 [05:05<1:36:16, 42.16s/it]Train:   6%|███▊                                                                | 8/144 [05:47<1:35:39, 42.20s/it]Train:   6%|████▎                                                               | 9/144 [06:29<1:34:36, 42.05s/it]Train:   7%|████▋                                                              | 10/144 [07:11<1:33:41, 41.95s/it]                                                                                                                  Train:   7%|████▋                                                              | 10/144 [07:11<1:33:41, 41.95s/it]Train:   7%|████▋                                                              | 10/144 [07:11<1:33:41, 41.95s/it]Train:   8%|█████                                                              | 11/144 [07:52<1:32:42, 41.82s/it]Train:   8%|█████▌                                                             | 12/144 [08:34<1:31:58, 41.80s/it]Train:   9%|██████                                                             | 13/144 [09:16<1:31:23, 41.86s/it]Train:  10%|██████▌                                                            | 14/144 [09:57<1:30:28, 41.76s/it]Train:  10%|██████▉                                                            | 15/144 [10:39<1:29:35, 41.67s/it]                                                                                                                  Train:  10%|██████▉                                                            | 15/144 [10:39<1:29:35, 41.67s/it]Train:  10%|██████▉                                                            | 15/144 [10:39<1:29:35, 41.67s/it]Train:  11%|███████▍                                                           | 16/144 [11:21<1:29:11, 41.81s/it]Train:  12%|███████▉                                                           | 17/144 [12:03<1:28:24, 41.77s/it]Train:  12%|████████▍                                                          | 18/144 [12:45<1:27:46, 41.80s/it]Train:  13%|████████▊                                                          | 19/144 [13:26<1:26:58, 41.74s/it]Train:  14%|█████████▎                                                         | 20/144 [14:08<1:26:26, 41.83s/it]                                                                                                                  Train:  14%|█████████▎                                                         | 20/144 [14:08<1:26:26, 41.83s/it]Train:  14%|█████████▎                                                         | 20/144 [14:08<1:26:26, 41.83s/it]Train:  15%|█████████▊                                                         | 21/144 [14:50<1:25:42, 41.81s/it]Train:  15%|██████████▏                                                        | 22/144 [15:32<1:25:04, 41.84s/it]Train:  16%|██████████▋                                                        | 23/144 [16:13<1:24:05, 41.70s/it]Train:  17%|███████████▏                                                       | 24/144 [16:55<1:23:21, 41.68s/it]Train:  17%|███████████▋                                                       | 25/144 [17:36<1:22:21, 41.53s/it]                                                                                                                  Train:  17%|███████████▋                                                       | 25/144 [17:36<1:22:21, 41.53s/it]Train:  17%|███████████▋                                                       | 25/144 [17:36<1:22:21, 41.53s/it]Train:  18%|████████████                                                       | 26/144 [18:18<1:21:44, 41.56s/it]Train:  19%|████████████▌                                                      | 27/144 [18:59<1:20:57, 41.52s/it]Train:  19%|█████████████                                                      | 28/144 [19:41<1:20:19, 41.55s/it]Train:  20%|█████████████▍                                                     | 29/144 [20:22<1:19:39, 41.56s/it]Train:  21%|█████████████▉                                                     | 30/144 [21:04<1:19:12, 41.69s/it]                                                                                                                  Train:  21%|█████████████▉                                                     | 30/144 [21:04<1:19:12, 41.69s/it]Train:  21%|█████████████▉                                                     | 30/144 [21:04<1:19:12, 41.69s/it]Train:  22%|██████████████▍                                                    | 31/144 [21:46<1:18:26, 41.65s/it]Train:  22%|██████████████▉                                                    | 32/144 [22:28<1:17:48, 41.68s/it]Train:  23%|███████████████▎                                                   | 33/144 [23:09<1:17:10, 41.72s/it]Train:  24%|███████████████▊                                                   | 34/144 [23:52<1:16:42, 41.85s/it]Train:  24%|████████████████▎                                                  | 35/144 [24:33<1:15:52, 41.77s/it]                                                                                                                  Train:  24%|████████████████▎                                                  | 35/144 [24:33<1:15:52, 41.77s/it]Train:  24%|████████████████▎                                                  | 35/144 [24:33<1:15:52, 41.77s/it]Train:  25%|████████████████▊                                                  | 36/144 [25:16<1:15:31, 41.96s/it]Train:  26%|█████████████████▏                                                 | 37/144 [25:57<1:14:39, 41.87s/it]Train:  26%|█████████████████▋                                                 | 38/144 [26:39<1:13:59, 41.88s/it]Train:  27%|██████████████████▏                                                | 39/144 [27:20<1:12:59, 41.71s/it]Train:  28%|██████████████████▌                                                | 40/144 [28:02<1:12:17, 41.71s/it]                                                                                                                  Train:  28%|██████████████████▌                                                | 40/144 [28:02<1:12:17, 41.71s/it]Train:  28%|██████████████████▌                                                | 40/144 [28:02<1:12:17, 41.71s/it]Train:  28%|███████████████████                                                | 41/144 [28:44<1:11:36, 41.72s/it]Train:  29%|███████████████████▌                                               | 42/144 [29:26<1:10:57, 41.74s/it]Train:  30%|████████████████████                                               | 43/144 [30:07<1:10:14, 41.72s/it]Train:  31%|████████████████████▍                                              | 44/144 [30:49<1:09:30, 41.71s/it]Train:  31%|████████████████████▉                                              | 45/144 [31:31<1:08:55, 41.77s/it]                                                                                                                  Train:  31%|████████████████████▉                                              | 45/144 [31:31<1:08:55, 41.77s/it]Train:  31%|████████████████████▉                                              | 45/144 [31:31<1:08:55, 41.77s/it]Train:  32%|█████████████████████▍                                             | 46/144 [32:13<1:08:15, 41.79s/it]Train:  33%|█████████████████████▊                                             | 47/144 [32:55<1:07:47, 41.93s/it]Train:  33%|███████████████████████                                              | 48/144 [33:18<57:48, 36.13s/it]{'loss': 4.21146584, 'grad_norm': 6.4830451, 'learning_rate': 2e-05, 'token_acc': 0.37612323, 'epoch': 0.02, 'global_step/max_steps': '1/144', 'percentage': '0.69%', 'elapsed_time': '54s', 'remaining_time': '2h 9m 52s', 'memory(GiB)': 43.4, 'train_speed(iter/s)': 0.018352}
+{'loss': 3.68832922, 'grad_norm': 2.16741204, 'learning_rate': 0.0001, 'token_acc': 0.40012025, 'epoch': 0.1, 'global_step/max_steps': '5/144', 'percentage': '3.47%', 'elapsed_time': '3m 42s', 'remaining_time': '1h 42m 59s', 'memory(GiB)': 45.09, 'train_speed(iter/s)': 0.022493}
+{'loss': 2.49184017, 'grad_norm': 0.79837853, 'learning_rate': 9.968e-05, 'token_acc': 0.4777868, 'epoch': 0.21, 'global_step/max_steps': '10/144', 'percentage': '6.94%', 'elapsed_time': '7m 11s', 'remaining_time': '1h 36m 16s', 'memory(GiB)': 45.48, 'train_speed(iter/s)': 0.023196}
+{'loss': 2.33681564, 'grad_norm': 0.71550333, 'learning_rate': 9.873e-05, 'token_acc': 0.4893592, 'epoch': 0.31, 'global_step/max_steps': '15/144', 'percentage': '10.42%', 'elapsed_time': '10m 39s', 'remaining_time': '1h 31m 38s', 'memory(GiB)': 45.48, 'train_speed(iter/s)': 0.02346}
+{'loss': 2.17748489, 'grad_norm': 0.71379256, 'learning_rate': 9.715e-05, 'token_acc': 0.51799577, 'epoch': 0.42, 'global_step/max_steps': '20/144', 'percentage': '13.89%', 'elapsed_time': '14m 8s', 'remaining_time': '1h 27m 41s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023565}
+{'loss': 2.09414997, 'grad_norm': 0.71866482, 'learning_rate': 9.498e-05, 'token_acc': 0.51938169, 'epoch': 0.52, 'global_step/max_steps': '25/144', 'percentage': '17.36%', 'elapsed_time': '17m 36s', 'remaining_time': '1h 23m 49s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023662}
+{'loss': 2.04394722, 'grad_norm': 0.75041145, 'learning_rate': 9.223e-05, 'token_acc': 0.53512936, 'epoch': 0.63, 'global_step/max_steps': '30/144', 'percentage': '20.83%', 'elapsed_time': '21m 4s', 'remaining_time': '1h 20m 6s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023719}
+{'loss': 2.01672134, 'grad_norm': 0.65947086, 'learning_rate': 8.894e-05, 'token_acc': 0.53480975, 'epoch': 0.73, 'global_step/max_steps': '35/144', 'percentage': '24.31%', 'elapsed_time': '24m 33s', 'remaining_time': '1h 16m 29s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.02375}
+{'loss': 1.96645947, 'grad_norm': 0.69797623, 'learning_rate': 8.516e-05, 'token_acc': 0.54270696, 'epoch': 0.84, 'global_step/max_steps': '40/144', 'percentage': '27.78%', 'elapsed_time': '28m 2s', 'remaining_time': '1h 12m 54s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023772}
+{'loss': 1.92270489, 'grad_norm': 0.75696152, 'learning_rate': 8.092e-05, 'token_acc': 0.54617779, 'epoch': 0.94, 'global_step/max_steps': '45/144', 'percentage': '31.25%', 'elapsed_time': '31m 31s', 'remaining_time': '1h 9m 21s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023791}
+Train:  34%|██████████████████████▊                                            | 49/144 [34:07<1:03:22, 40.03s/it]Train:  35%|███████████████████████▎                                           | 50/144 [34:48<1:03:24, 40.47s/it]                                                                                                                  Train:  35%|███████████████████████▎                                           | 50/144 [34:48<1:03:24, 40.47s/it]Train:  35%|███████████████████████▎                                           | 50/144 [34:48<1:03:24, 40.47s/it][INFO:swift] Saving model checkpoint to /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/checkpoint-50
+Train:  35%|███████████████████████▋                                           | 51/144 [35:31<1:03:53, 41.22s/it]Train:  36%|████████████████████████▏                                          | 52/144 [36:13<1:03:17, 41.27s/it]Train:  37%|████████████████████████▋                                          | 53/144 [36:54<1:02:38, 41.30s/it]Train:  38%|█████████████████████████▏                                         | 54/144 [37:36<1:02:08, 41.42s/it]Train:  38%|█████████████████████████▌                                         | 55/144 [38:18<1:01:42, 41.60s/it]                                                                                                                  Train:  38%|█████████████████████████▌                                         | 55/144 [38:18<1:01:42, 41.60s/it]Train:  38%|█████████████████████████▌                                         | 55/144 [38:18<1:01:42, 41.60s/it]Train:  39%|██████████████████████████                                         | 56/144 [38:59<1:00:54, 41.53s/it]Train:  40%|██████████████████████████▌                                        | 57/144 [39:41<1:00:28, 41.71s/it]Train:  40%|███████████████████████████▊                                         | 58/144 [40:23<59:47, 41.71s/it]Train:  41%|████████████████████████████▎                                        | 59/144 [41:05<59:11, 41.79s/it]Train:  42%|████████████████████████████▊                                        | 60/144 [41:47<58:37, 41.88s/it]                                                                                                                  Train:  42%|████████████████████████████▊                                        | 60/144 [41:47<58:37, 41.88s/it]Train:  42%|████████████████████████████▊                                        | 60/144 [41:47<58:37, 41.88s/it]Train:  42%|█████████████████████████████▏                                       | 61/144 [42:29<57:53, 41.85s/it]Train:  43%|█████████████████████████████▋                                       | 62/144 [43:10<56:59, 41.70s/it]Train:  44%|██████████████████████████████▏                                      | 63/144 [43:52<56:12, 41.63s/it]Train:  44%|██████████████████████████████▋                                      | 64/144 [44:33<55:32, 41.66s/it]Train:  45%|███████████████████████████████▏                                     | 65/144 [45:15<54:44, 41.58s/it]                                                                                                                  Train:  45%|███████████████████████████████▏                                     | 65/144 [45:15<54:44, 41.58s/it]Train:  45%|███████████████████████████████▏                                     | 65/144 [45:15<54:44, 41.58s/it]Train:  46%|███████████████████████████████▋                                     | 66/144 [45:57<54:18, 41.77s/it]Train:  47%|████████████████████████████████                                     | 67/144 [46:39<53:33, 41.73s/it]Train:  47%|████████████████████████████████▌                                    | 68/144 [47:20<52:51, 41.73s/it]Train:  48%|█████████████████████████████████                                    | 69/144 [48:02<52:11, 41.75s/it]Train:  49%|█████████████████████████████████▌                                   | 70/144 [48:44<51:24, 41.68s/it]                                                                                                                  Train:  49%|█████████████████████████████████▌                                   | 70/144 [48:44<51:24, 41.68s/it]Train:  49%|█████████████████████████████████▌                                   | 70/144 [48:44<51:24, 41.68s/it]Train:  49%|██████████████████████████████████                                   | 71/144 [49:25<50:40, 41.65s/it]Train:  50%|██████████████████████████████████▌                                  | 72/144 [50:07<49:55, 41.60s/it]Train:  51%|██████████████████████████████████▉                                  | 73/144 [50:48<49:12, 41.58s/it]Train:  51%|███████████████████████████████████▍                                 | 74/144 [51:30<48:31, 41.59s/it]Train:  52%|███████████████████████████████████▉                                 | 75/144 [52:11<47:48, 41.57s/it]                                                                                                                  Train:  52%|███████████████████████████████████▉                                 | 75/144 [52:11<47:48, 41.57s/it]Train:  52%|███████████████████████████████████▉                                 | 75/144 [52:11<47:48, 41.57s/it]Train:  53%|████████████████████████████████████▍                                | 76/144 [52:53<47:05, 41.55s/it]Train:  53%|████████████████████████████████████▉                                | 77/144 [53:35<46:32, 41.67s/it]Train:  54%|█████████████████████████████████████▍                               | 78/144 [54:16<45:48, 41.65s/it]Train:  55%|█████████████████████████████████████▊                               | 79/144 [54:58<45:04, 41.61s/it]Train:  56%|██████████████████████████████████████▎                              | 80/144 [55:39<44:18, 41.54s/it]                                                                                                                  Train:  56%|██████████████████████████████████████▎                              | 80/144 [55:39<44:18, 41.54s/it]Train:  56%|██████████████████████████████████████▎                              | 80/144 [55:39<44:18, 41.54s/it]Train:  56%|██████████████████████████████████████▊                              | 81/144 [56:21<43:44, 41.65s/it]Train:  57%|███████████████████████████████████████▎                             | 82/144 [57:03<42:57, 41.57s/it]Train:  58%|███████████████████████████████████████▊                             | 83/144 [57:44<42:12, 41.52s/it]Train:  58%|████████████████████████████████████████▎                            | 84/144 [58:26<41:38, 41.63s/it]Train:  59%|████████████████████████████████████████▋                            | 85/144 [59:07<40:55, 41.61s/it]                                                                                                                  Train:  59%|████████████████████████████████████████▋                            | 85/144 [59:07<40:55, 41.61s/it]Train:  59%|████████████████████████████████████████▋                            | 85/144 [59:07<40:55, 41.61s/it]Train:  60%|█████████████████████████████████████████▏                           | 86/144 [59:50<40:21, 41.75s/it]Train:  60%|████████████████████████████████████████▍                          | 87/144 [1:00:31<39:43, 41.82s/it]Train:  61%|████████████████████████████████████████▉                          | 88/144 [1:01:13<38:59, 41.78s/it]Train:  62%|█████████████████████████████████████████▍                         | 89/144 [1:01:55<38:23, 41.87s/it]Train:  62%|█████████████████████████████████████████▉                         | 90/144 [1:02:37<37:40, 41.87s/it]                                                                                                                  Train:  62%|█████████████████████████████████████████▉                         | 90/144 [1:02:37<37:40, 41.87s/it]Train:  62%|█████████████████████████████████████████▉                         | 90/144 [1:02:37<37:40, 41.87s/it]Train:  63%|██████████████████████████████████████████▎                        | 91/144 [1:03:19<37:00, 41.90s/it]Train:  64%|██████████████████████████████████████████▊                        | 92/144 [1:04:01<36:16, 41.86s/it]Train:  65%|███████████████████████████████████████████▎                       | 93/144 [1:04:43<35:33, 41.82s/it]Train:  65%|███████████████████████████████████████████▋                       | 94/144 [1:05:24<34:52, 41.84s/it]Train:  66%|████████████████████████████████████████████▏                      | 95/144 [1:06:07<34:16, 41.98s/it]                                                                                                                  Train:  66%|████████████████████████████████████████████▏                      | 95/144 [1:06:07<34:16, 41.98s/it]Train:  66%|████████████████████████████████████████████▏                      | 95/144 [1:06:07<34:16, 41.98s/it]Train:  67%|████████████████████████████████████████████▋                      | 96/144 [1:06:29<28:53, 36.10s/it]{'loss': 1.91240826, 'grad_norm': 0.77291197, 'learning_rate': 7.629e-05, 'token_acc': 0.55086114, 'epoch': 1.04, 'global_step/max_steps': '50/144', 'percentage': '34.72%', 'elapsed_time': '34m 48s', 'remaining_time': '1h 5m 26s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023938}
+{'loss': 1.74503059, 'grad_norm': 0.79675066, 'learning_rate': 7.133e-05, 'token_acc': 0.57118582, 'epoch': 1.15, 'global_step/max_steps': '55/144', 'percentage': '38.19%', 'elapsed_time': '38m 18s', 'remaining_time': '1h 1m 58s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023932}
+{'loss': 1.75065231, 'grad_norm': 0.8118605, 'learning_rate': 6.609e-05, 'token_acc': 0.57604994, 'epoch': 1.25, 'global_step/max_steps': '60/144', 'percentage': '41.67%', 'elapsed_time': '41m 47s', 'remaining_time': '58m 30s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023929}
+{'loss': 1.75401516, 'grad_norm': 0.89593083, 'learning_rate': 6.065e-05, 'token_acc': 0.57834074, 'epoch': 1.36, 'global_step/max_steps': '65/144', 'percentage': '45.14%', 'elapsed_time': '45m 15s', 'remaining_time': '54m 59s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.02394}
+{'loss': 1.6319458, 'grad_norm': 0.93818176, 'learning_rate': 5.508e-05, 'token_acc': 0.58854105, 'epoch': 1.46, 'global_step/max_steps': '70/144', 'percentage': '48.61%', 'elapsed_time': '48m 44s', 'remaining_time': '51m 31s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023939}
+{'loss': 1.66288624, 'grad_norm': 1.04447317, 'learning_rate': 4.943e-05, 'token_acc': 0.59153692, 'epoch': 1.57, 'global_step/max_steps': '75/144', 'percentage': '52.08%', 'elapsed_time': '52m 11s', 'remaining_time': '48m 1s', 'memory(GiB)': 45.93, 'train_speed(iter/s)': 0.023948}
+{'loss': 1.65014591, 'grad_norm': 0.96381003, 'learning_rate': 4.38e-05, 'token_acc': 0.59193471, 'epoch': 1.67, 'global_step/max_steps': '80/144', 'percentage': '55.56%', 'elapsed_time': '55m 39s', 'remaining_time': '44m 31s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.023954}
+{'loss': 1.67339249, 'grad_norm': 0.96769977, 'learning_rate': 3.825e-05, 'token_acc': 0.58221496, 'epoch': 1.78, 'global_step/max_steps': '85/144', 'percentage': '59.03%', 'elapsed_time': '59m 7s', 'remaining_time': '41m 2s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.023958}
+{'loss': 1.67624798, 'grad_norm': 0.9864521, 'learning_rate': 3.284e-05, 'token_acc': 0.58757778, 'epoch': 1.88, 'global_step/max_steps': '90/144', 'percentage': '62.50%', 'elapsed_time': '1h 2m 37s', 'remaining_time': '37m 34s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.023951}
+{'loss': 1.67411079, 'grad_norm': 0.9517628, 'learning_rate': 2.765e-05, 'token_acc': 0.59243256, 'epoch': 1.99, 'global_step/max_steps': '95/144', 'percentage': '65.97%', 'elapsed_time': '1h 6m 7s', 'remaining_time': '34m 6s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.023946}
+Train:  67%|█████████████████████████████████████████████▏                     | 97/144 [1:07:19<31:26, 40.13s/it]Train:  68%|█████████████████████████████████████████████▌                     | 98/144 [1:08:00<31:03, 40.51s/it]Train:  69%|██████████████████████████████████████████████                     | 99/144 [1:08:42<30:38, 40.86s/it]Train:  69%|█████████████████████████████████████████████▊                    | 100/144 [1:09:24<30:10, 41.15s/it]                                                                                                                  Train:  69%|█████████████████████████████████████████████▊                    | 100/144 [1:09:24<30:10, 41.15s/it]Train:  69%|█████████████████████████████████████████████▊                    | 100/144 [1:09:24<30:10, 41.15s/it][INFO:swift] Saving model checkpoint to /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/checkpoint-100
+Train:  70%|██████████████████████████████████████████████▎                   | 101/144 [1:10:07<29:52, 41.69s/it]Train:  71%|██████████████████████████████████████████████▊                   | 102/144 [1:10:48<29:06, 41.59s/it]Train:  72%|███████████████████████████████████████████████▏                  | 103/144 [1:11:30<28:32, 41.77s/it]Train:  72%|███████████████████████████████████████████████▋                  | 104/144 [1:12:12<27:48, 41.70s/it]Train:  73%|████████████████████████████████████████████████▏                 | 105/144 [1:12:54<27:10, 41.80s/it]                                                                                                                  Train:  73%|████████████████████████████████████████████████▏                 | 105/144 [1:12:54<27:10, 41.80s/it]Train:  73%|████████████████████████████████████████████████▏                 | 105/144 [1:12:54<27:10, 41.80s/it]Train:  74%|████████████████████████████████████████████████▌                 | 106/144 [1:13:35<26:26, 41.76s/it]Train:  74%|█████████████████████████████████████████████████                 | 107/144 [1:14:17<25:45, 41.77s/it]Train:  75%|█████████████████████████████████████████████████▌                | 108/144 [1:14:59<25:04, 41.79s/it]Train:  76%|█████████████████████████████████████████████████▉                | 109/144 [1:15:41<24:20, 41.73s/it]Train:  76%|██████████████████████████████████████████████████▍               | 110/144 [1:16:22<23:36, 41.65s/it]                                                                                                                  Train:  76%|██████████████████████████████████████████████████▍               | 110/144 [1:16:22<23:36, 41.65s/it]Train:  76%|██████████████████████████████████████████████████▍               | 110/144 [1:16:22<23:36, 41.65s/it]Train:  77%|██████████████████████████████████████████████████▉               | 111/144 [1:17:04<22:55, 41.68s/it]Train:  78%|███████████████████████████████████████████████████▎              | 112/144 [1:17:46<22:17, 41.78s/it]Train:  78%|███████████████████████████████████████████████████▊              | 113/144 [1:18:27<21:32, 41.69s/it]Train:  79%|████████████████████████████████████████████████████▎             | 114/144 [1:19:09<20:48, 41.63s/it]Train:  80%|████████████████████████████████████████████████████▋             | 115/144 [1:19:51<20:09, 41.70s/it]                                                                                                                  Train:  80%|████████████████████████████████████████████████████▋             | 115/144 [1:19:51<20:09, 41.70s/it]Train:  80%|████████████████████████████████████████████████████▋             | 115/144 [1:19:51<20:09, 41.70s/it]Train:  81%|█████████████████████████████████████████████████████▏            | 116/144 [1:20:32<19:25, 41.63s/it]Train:  81%|█████████████████████████████████████████████████████▋            | 117/144 [1:21:14<18:43, 41.62s/it]Train:  82%|██████████████████████████████████████████████████████            | 118/144 [1:21:56<18:04, 41.73s/it]Train:  83%|██████████████████████████████████████████████████████▌           | 119/144 [1:22:37<17:22, 41.70s/it]Train:  83%|███████████████████████████████████████████████████████           | 120/144 [1:23:19<16:40, 41.69s/it]                                                                                                                  Train:  83%|███████████████████████████████████████████████████████           | 120/144 [1:23:19<16:40, 41.69s/it]Train:  83%|███████████████████████████████████████████████████████           | 120/144 [1:23:19<16:40, 41.69s/it]Train:  84%|███████████████████████████████████████████████████████▍          | 121/144 [1:24:01<16:01, 41.79s/it]Train:  85%|███████████████████████████████████████████████████████▉          | 122/144 [1:24:43<15:19, 41.77s/it]Train:  85%|████████████████████████████████████████████████████████▍         | 123/144 [1:25:24<14:35, 41.70s/it]Train:  86%|████████████████████████████████████████████████████████▊         | 124/144 [1:26:06<13:52, 41.65s/it]Train:  87%|█████████████████████████████████████████████████████████▎        | 125/144 [1:26:48<13:12, 41.74s/it]                                                                                                                  Train:  87%|█████████████████████████████████████████████████████████▎        | 125/144 [1:26:48<13:12, 41.74s/it]Train:  87%|█████████████████████████████████████████████████████████▎        | 125/144 [1:26:48<13:12, 41.74s/it]Train:  88%|█████████████████████████████████████████████████████████▊        | 126/144 [1:27:30<12:31, 41.77s/it]Train:  88%|██████████████████████████████████████████████████████████▏       | 127/144 [1:28:11<11:49, 41.75s/it]Train:  89%|██████████████████████████████████████████████████████████▋       | 128/144 [1:28:53<11:08, 41.77s/it]Train:  90%|███████████████████████████████████████████████████████████▏      | 129/144 [1:29:35<10:26, 41.74s/it]Train:  90%|███████████████████████████████████████████████████████████▌      | 130/144 [1:30:16<09:43, 41.69s/it]                                                                                                                  Train:  90%|███████████████████████████████████████████████████████████▌      | 130/144 [1:30:16<09:43, 41.69s/it]Train:  90%|███████████████████████████████████████████████████████████▌      | 130/144 [1:30:16<09:43, 41.69s/it]Train:  91%|████████████████████████████████████████████████████████████      | 131/144 [1:30:58<09:03, 41.78s/it]Train:  92%|████████████████████████████████████████████████████████████▌     | 132/144 [1:31:40<08:20, 41.75s/it]Train:  92%|████████████████████████████████████████████████████████████▉     | 133/144 [1:32:22<07:40, 41.82s/it]Train:  93%|█████████████████████████████████████████████████████████████▍    | 134/144 [1:33:04<06:58, 41.88s/it]Train:  94%|█████████████████████████████████████████████████████████████▉    | 135/144 [1:33:46<06:16, 41.80s/it]                                                                                                                  Train:  94%|█████████████████████████████████████████████████████████████▉    | 135/144 [1:33:46<06:16, 41.80s/it]Train:  94%|█████████████████████████████████████████████████████████████▉    | 135/144 [1:33:46<06:16, 41.80s/it]Train:  94%|██████████████████████████████████████████████████████████████▎   | 136/144 [1:34:27<05:33, 41.70s/it]Train:  95%|██████████████████████████████████████████████████████████████▊   | 137/144 [1:35:09<04:52, 41.74s/it]Train:  96%|███████████████████████████████████████████████████████████████▎  | 138/144 [1:35:51<04:10, 41.77s/it]Train:  97%|███████████████████████████████████████████████████████████████▋  | 139/144 [1:36:32<03:28, 41.72s/it]Train:  97%|████████████████████████████████████████████████████████████████▏ | 140/144 [1:37:15<02:47, 41.85s/it]                                                                                                                  Train:  97%|████████████████████████████████████████████████████████████████▏ | 140/144 [1:37:15<02:47, 41.85s/it]Train:  97%|████████████████████████████████████████████████████████████████▏ | 140/144 [1:37:15<02:47, 41.85s/it]Train:  98%|████████████████████████████████████████████████████████████████▋ | 141/144 [1:37:57<02:05, 41.90s/it]Train:  99%|█████████████████████████████████████████████████████████████████ | 142/144 [1:38:38<01:23, 41.71s/it]Train:  99%|█████████████████████████████████████████████████████████████████▌| 143/144 [1:39:20<00:41, 41.81s/it]Train: 100%|██████████████████████████████████████████████████████████████████| 144/144 [1:39:42<00:00, 35.97s/it][INFO:swift] Saving model checkpoint to /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/checkpoint-144
+                                                                                                                  Train: 100%|██████████████████████████████████████████████████████████████████| 144/144 [1:39:43<00:00, 35.97s/it]Train: 100%|██████████████████████████████████████████████████████████████████| 144/144 [1:39:43<00:00, 35.97s/it]Train: 100%|██████████████████████████████████████████████████████████████████| 144/144 [1:39:43<00:00, 41.55s/it]
+[INFO:swift] last_model_checkpoint: /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/checkpoint-144
+[INFO:swift] best_model_checkpoint: None
+[INFO:swift] images_dir: /root/paddlejob/workspace/env_run/output/VIDA/sft/output/qwen3_vl_8b_lora_sft_stable/v3-20251228-102420/images
+[INFO:swift] End time of running main: 2025-12-28 12:05:23.355133
+{'loss': 1.54881592, 'grad_norm': 0.97931814, 'learning_rate': 2.275e-05, 'token_acc': 0.6067997, 'epoch': 2.08, 'global_step/max_steps': '100/144', 'percentage': '69.44%', 'elapsed_time': '1h 9m 24s', 'remaining_time': '30m 32s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.024015}
+{'loss': 1.47177343, 'grad_norm': 1.07278419, 'learning_rate': 1.82e-05, 'token_acc': 0.62104539, 'epoch': 2.19, 'global_step/max_steps': '105/144', 'percentage': '72.92%', 'elapsed_time': '1h 12m 54s', 'remaining_time': '27m 4s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.024005}
+{'loss': 1.43351955, 'grad_norm': 1.23971665, 'learning_rate': 1.405e-05, 'token_acc': 0.63313975, 'epoch': 2.29, 'global_step/max_steps': '110/144', 'percentage': '76.39%', 'elapsed_time': '1h 16m 22s', 'remaining_time': '23m 36s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.024004}
+{'loss': 1.41350937, 'grad_norm': 1.26771617, 'learning_rate': 1.036e-05, 'token_acc': 0.63509819, 'epoch': 2.4, 'global_step/max_steps': '115/144', 'percentage': '79.86%', 'elapsed_time': '1h 19m 51s', 'remaining_time': '20m 8s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.024003}
+{'loss': 1.49335661, 'grad_norm': 1.24647725, 'learning_rate': 7.18e-06, 'token_acc': 0.62317793, 'epoch': 2.5, 'global_step/max_steps': '120/144', 'percentage': '83.33%', 'elapsed_time': '1h 23m 19s', 'remaining_time': '16m 39s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.024003}
+{'loss': 1.44158983, 'grad_norm': 1.16453874, 'learning_rate': 4.54e-06, 'token_acc': 0.62780168, 'epoch': 2.61, 'global_step/max_steps': '125/144', 'percentage': '86.81%', 'elapsed_time': '1h 26m 48s', 'remaining_time': '13m 11s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.024001}
+{'loss': 1.41989851, 'grad_norm': 1.29480684, 'learning_rate': 2.48e-06, 'token_acc': 0.62688532, 'epoch': 2.71, 'global_step/max_steps': '130/144', 'percentage': '90.28%', 'elapsed_time': '1h 30m 16s', 'remaining_time': '9m 43s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.023999}
+{'loss': 1.51484528, 'grad_norm': 1.20470119, 'learning_rate': 1.03e-06, 'token_acc': 0.61850109, 'epoch': 2.82, 'global_step/max_steps': '135/144', 'percentage': '93.75%', 'elapsed_time': '1h 33m 46s', 'remaining_time': '6m 15s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.023995}
+{'loss': 1.44214096, 'grad_norm': 1.15593302, 'learning_rate': 2e-07, 'token_acc': 0.62178604, 'epoch': 2.92, 'global_step/max_steps': '140/144', 'percentage': '97.22%', 'elapsed_time': '1h 37m 15s', 'remaining_time': '2m 46s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.023993}
+{'train_runtime': 5983.623, 'train_samples_per_second': 1.525, 'train_steps_per_second': 0.024, 'train_loss': 1.81558001, 'token_acc': 0.63724609, 'epoch': 3.0, 'global_step/max_steps': '144/144', 'percentage': '100.00%', 'elapsed_time': '1h 39m 43s', 'remaining_time': '0s', 'memory(GiB)': 46.04, 'train_speed(iter/s)': 0.024066}
+[W1228 12:05:25.443415142 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+[W1228 12:05:27.141653443 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())

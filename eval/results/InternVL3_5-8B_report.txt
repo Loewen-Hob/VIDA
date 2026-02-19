@@ -1,0 +1,15 @@
+Evaluation Report for: InternVL3_5-8B
+Date: 2026-01-05 16:33:03
+========================================
+
+Loading Eval Model: /home/users/zhanghongbo/all-MiniLM-L6-v2 ...
+Evaluating 102 samples...
+
+========================================
+📊 Evaluation Results: InternVL3_5-8B
+========================================
+1. K-RME (Accuracy):    43.14%
+2. SAS (Strategy):      23.53%
+3. Max-Sim (Semantic):  0.4740
+4. Visual Grounding:    0.4458
+========================================
