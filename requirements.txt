@@ -1,0 +1,5 @@
+modelscope-swift
+sentence-transformers
+torch
+tqdm
+numpy
